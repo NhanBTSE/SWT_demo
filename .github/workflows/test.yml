@@ -1,0 +1,16 @@
+name: Kiem Tra Tu Dong CI/CD
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Cai dat thu vien
+        run: npm install
+      - name: Cai dat trinh duyet Playwright
+        run: npx playwright install --with-deps
+      - name: Chay kach ban test AI
+        run: npx playwright test ai-test.spec.js
