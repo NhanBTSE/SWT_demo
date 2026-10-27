@@ -7,10 +7,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
       - name: Cai dat thu vien
         run: npm install
       - name: Cai dat trinh duyet Playwright
         run: npx playwright install --with-deps
-      - name: Chay kach ban test AI
-        run: npx playwright test ai-test.spec.js
+      - name: Chay chi dinh kach ban test AI
+        run: npx playwright test tests/ai-test.spec.js
